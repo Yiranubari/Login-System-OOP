@@ -19,4 +19,22 @@ class Signup extends Dbh
         $stmt->bindParam(":pwd", $this->pwd);
         $stmt->execute();
     }
+
+    private function isEmptySubmit()
+    {
+        if (isset(this->username) && isset(this->pwd)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    private function signupUser()
+    {
+        // Error handlers
+
+
+        // If no errors, signup user
+    }
 }

@@ -14,7 +14,7 @@ class Signup extends Dbh
     private function insetUser()
     {
         $query = "INSERT INTO users('username', 'pwd') VALUES (:username, :pwd);";
-        $stmt = $this->connect()->prepare($query);
+        $stmt = parent::connect()->prepare($query);
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":pwd", $this->pwd);
         $stmt->execute();

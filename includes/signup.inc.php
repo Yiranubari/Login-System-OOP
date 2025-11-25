@@ -9,4 +9,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     $signup = new Signup($username, $pwd);
+    $signup->signupUser();
 }

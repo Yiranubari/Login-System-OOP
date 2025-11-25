@@ -30,7 +30,7 @@ class Signup extends Dbh
     }
 
 
-    private function signupUser()
+    public function signupUser()
     {
         // Error handlers
         if ($this->isEmptySubmit()) {

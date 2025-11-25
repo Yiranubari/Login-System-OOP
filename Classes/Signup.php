@@ -39,6 +39,6 @@ class Signup extends Dbh
         }
 
         // If no errors, signup user
-
+        $this->insetUser();
     }
 }

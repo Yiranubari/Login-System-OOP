@@ -1,6 +1,6 @@
 <?php
 
-class Signup
+class Signup extends Dbh
 {
     private $username;
     private $pwd;

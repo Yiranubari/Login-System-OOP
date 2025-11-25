@@ -10,4 +10,9 @@ class Signup extends Dbh
         $this->username = $username;
         $this->pwd = $pwd;
     }
+
+    private function insetUser()
+    {
+        $query = "INSERT INTO users('username', 'pwd') VALUES (:username, :pwd);";
+    }
 }

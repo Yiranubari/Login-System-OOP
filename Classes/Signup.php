@@ -22,7 +22,7 @@ class Signup extends Dbh
 
     private function isEmptySubmit()
     {
-        if (isset(this->username) && isset(this->pwd)) {
+        if (isset($this->username) && isset($this->pwd)) {
             return false;
         } else {
             return true;
@@ -33,8 +33,12 @@ class Signup extends Dbh
     private function signupUser()
     {
         // Error handlers
-
+        if ($this->isEmptySubmit()) {
+            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . '/index.php');
+            die();
+        }
 
         // If no errors, signup user
+
     }
 }

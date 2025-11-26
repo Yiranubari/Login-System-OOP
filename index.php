@@ -14,15 +14,15 @@
         <input type="password" name="pwd" placeholder="Password">
         <input type="email" name="email" placeholder="Email">
         <button>Signup</button>
-    </form>
 
-    <?php
-    if (isset($_GET['error']) && $_GET['error'] === 'emptyinput') {
-        echo "<p>Please fill in all fields!</p>";
-    } else if (isset($_GET['signup']) && $_GET['signup'] === 'success') {
-        echo "<p>Signup successful!</p>";
-    }
-    ?>
+        <?php
+        if (isset($_GET['error']) && $_GET['error'] === 'emptyinput') {
+            echo "<p class=\"error\">Please fill in all fields!</p>";
+        } else if (isset($_GET['signup']) && $_GET['signup'] === 'success') {
+            echo "<p class=\"success\">Signup successful!</p>";
+        }
+        ?>
+    </form>
 </body>
 
 </html>

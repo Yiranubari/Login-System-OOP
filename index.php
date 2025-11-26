@@ -16,7 +16,11 @@
     </form>
 
     <?php
-
+    if (isset($_GET['error']) && $_GET['error'] === 'emptyinput') {
+        echo "<p>Please fill in all fields!</p>";
+    } else if (isset($_GET['signup']) && $_GET['signup'] === 'success') {
+        echo "<p>Signup successful!</p>";
+    }
     ?>
 </body>
 

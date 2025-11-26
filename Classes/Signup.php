@@ -11,9 +11,9 @@ class Signup extends Dbh
         $this->pwd = $pwd;
     }
 
-    private function insetUser()
+    private function insertUser()
     {
-        $query = "INSERT INTO users('username', 'pwd') VALUES (:username, :pwd);";
+        $query = "INSERT INTO users(`username`, `pwd`) VALUES (:username, :pwd);";
         $stmt = parent::connect()->prepare($query);
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":pwd", $this->pwd);
@@ -22,7 +22,7 @@ class Signup extends Dbh
 
     private function isEmptySubmit()
     {
-        if (isset($this->username) && isset($this->pwd)) {
+        if (!empty($this->username) && !empty($this->pwd)) {
             return false;
         } else {
             return true;
@@ -34,11 +34,11 @@ class Signup extends Dbh
     {
         // Error handlers
         if ($this->isEmptySubmit()) {
-            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . '/index.php');
+            header("Location: ../index.php?error=emptyinput");
             die();
         }
 
         // If no errors, signup user
-        $this->insetUser();
+        $this->insertUser();
     }
 }

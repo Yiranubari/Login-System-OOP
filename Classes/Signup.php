@@ -15,8 +15,11 @@ class Signup extends Dbh
     {
         $query = "INSERT INTO users(`username`, `pwd`) VALUES (:username, :pwd);";
         $stmt = parent::connect()->prepare($query);
+
+        $hashedPwd = password_hash($this->pwd, PASSWORD_DEFAULT);
+
         $stmt->bindParam(":username", $this->username);
-        $stmt->bindParam(":pwd", $this->pwd);
+        $stmt->bindParam(":pwd", $hashedPwd);
         $stmt->execute();
     }
 

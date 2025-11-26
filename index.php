@@ -15,8 +15,9 @@ error_reporting(E_ALL);
 
 <body>
     <form action="includes/signup.inc.php" method="post">
-        <input type="text" name="username">
-        <input type="password" name="pwd">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="pwd" placeholder="Password">
+        <input type="email" name="email" placeholder="Email">
         <button>Signup</button>
     </form>
 
